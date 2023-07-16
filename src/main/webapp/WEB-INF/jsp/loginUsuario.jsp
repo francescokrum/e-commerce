@@ -40,10 +40,13 @@
 
 </div>
 
+<div id="aviso">
 <c:if test="${not empty msg_servidor}">
 
     <h2>Usuário ou senha incorretos</h2>
 
 </c:if>
+</div>
+
 </body>
 </html>
