@@ -30,10 +30,6 @@ public class PedidoController {
 
         RedirectView redirectView = null;
 
-        System.out.println("codfor :"+ pedido.getCodfor());
-        System.out.println("codprod: "+ pedido.getCodprod());
-        System.out.println("qtd: "+ pedido.getQtd());
-
         if(new PedidoDAO().cadastrarPedido(pedido)){
 
             redirectView = new RedirectView("/pedido/cadastrarPedido", true);
@@ -50,8 +46,6 @@ public class PedidoController {
 
     @GetMapping("/listarPedidos")
     public String listarProdutosView(Model model){
-
-        System.out.println("TA ENTRANDO NA LISTAGEM DE pedidos");
 
         model.addAttribute("pedidos", new PedidoDAO().getPedidos());
 
@@ -72,8 +66,6 @@ public class PedidoController {
     @GetMapping("/editarPedido")
     public String editarUsuarioView(@RequestParam("codpedido")int codpedido, Model model){
 
-        System.out.println("ENTROU GET EDIT PROD");
-
         model.addAttribute("pedido", new PedidoDAO().getPedido(codpedido));
         model.addAttribute("fornecedores", new FornecedorDAO().getFornecedores());
         model.addAttribute("produtos", new ProdutoDAO().getProdutos());
@@ -83,8 +75,6 @@ public class PedidoController {
 
     @PostMapping("/editarPedido")
     public RedirectView editarFornecedorView(@ModelAttribute("pedido") Pedido pedido, RedirectAttributes redirectAttributes){
-
-        System.out.println("CODPEDIDO" + pedido.getCodpedido());
 
         RedirectView redirectView = null;
 

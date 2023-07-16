@@ -19,7 +19,6 @@ public class ProdutoService{
             verifica = false;
         }
         else{
-            System.out.println("TA RETORNANDO ESSE");
             new ProdutoDAO().cadastrarProduto(produto);
             verifica = true;
         }

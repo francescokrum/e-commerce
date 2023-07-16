@@ -17,7 +17,6 @@ public class FornecedorController {
     @GetMapping("/cadastrarFornecedor")
     public String cadastrarFornecedorView(Model model){
 
-        System.out.println("ENTROU NO GET DE CADASTRAR FORNECEDOR");
         model.addAttribute("fornecedor", new Fornecedor());
 
         return "cadastrarFornecedor";
@@ -26,17 +25,14 @@ public class FornecedorController {
     @PostMapping("/cadastrarFornecedor")
     public RedirectView cadastrarFornecedorView(@ModelAttribute("fornecedor")Fornecedor fornecedor, RedirectAttributes redirectAttributes){
 
-        System.out.println("ENTROU NO POST DE CADASTRAR FORNECEDOR");
         RedirectView redirectView = null;
 
         if(new FornecedorService().autenticaFornecedor(fornecedor)){
             redirectView = new RedirectView("/fornecedor/cadastrarFornecedor", true);
-            System.out.println("CADASTROU FORNECEDOR");
         }
         else{
             redirectView = new RedirectView("/fornecedor/cadastrarFornecedor", true);
             redirectAttributes.addFlashAttribute("msg_servidor", false);
-            System.out.println("NÃO CADASTROU");
         }
         return redirectView;
     }
@@ -55,8 +51,6 @@ public class FornecedorController {
 
         RedirectView redirectView = null;
 
-        System.out.println("codfor: "+codfor);
-
         if(new FornecedorDAO().deletarFornecedor(codfor)){
 
             redirectView = new RedirectView("/fornecedor/listarFornecedores", true);
@@ -73,8 +67,6 @@ public class FornecedorController {
     @GetMapping("/editarFornecedor")
     public String editarFornecedorView(@RequestParam("codfor")int codfor, Model model){
 
-        System.out.println("ENTROU GET EDIT FOR");
-
         model.addAttribute("fornecedor", new FornecedorDAO().getFornecedor(codfor));
 
         return "editarFornecedor";
@@ -83,11 +75,7 @@ public class FornecedorController {
     @PostMapping("/editarFornecedor")
     public RedirectView editarFornecedorView(@ModelAttribute("fornecedor")Fornecedor fornecedor, RedirectAttributes redirectAttributes){
 
-        System.out.println("ENTROU POST EDIT FOR");
-
         RedirectView redirectView = null;
-
-        System.out.println("fornecedor: "+ fornecedor.getCodfor() + fornecedor.getNomefor() + fornecedor.getCep() + fornecedor.getCnpj());
 
         if(new FornecedorDAO().editarFornecedor(fornecedor)){
 

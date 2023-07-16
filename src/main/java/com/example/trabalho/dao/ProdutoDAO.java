@@ -80,10 +80,6 @@ public class ProdutoDAO {
 
     public boolean deletarProduto(int codprod){
 
-        System.out.println("ENTROU NO DAO DELETA PRODUTO");
-
-        System.out.println("PRODUTO: " + codprod);
-
         try(Connection con = new ConectaBD().getConexao()) {
 
             String sql = "DELETE FROM produto WHERE codprod = ?";
@@ -149,7 +145,6 @@ public class ProdutoDAO {
         }catch(SQLException e){
             e.printStackTrace();
         }
-        System.out.println("CADASTROU PROD: " + cadastrou);
         return cadastrou;
     }
 

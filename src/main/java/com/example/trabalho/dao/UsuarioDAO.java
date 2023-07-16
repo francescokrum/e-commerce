@@ -95,7 +95,6 @@ public class UsuarioDAO {
     }
     public boolean deletarFuncionario(int codusuario){
 
-
         try(Connection con = new ConectaBD().getConexao()) {
 
             String sql = "DELETE FROM usuario WHERE codusuario = ?";
@@ -203,7 +202,6 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
 
-        System.out.println("cadastrou: " + cadastrou);
         return cadastrou;
     }
 

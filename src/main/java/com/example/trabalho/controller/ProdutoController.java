@@ -82,11 +82,7 @@ public class ProdutoController {
     @PostMapping("/editarProduto")
     public RedirectView editarFornecedorView(@ModelAttribute("produto") Produto produto, RedirectAttributes redirectAttributes){
 
-        System.out.println("ENTROU POST EDIT FOR");
-
         RedirectView redirectView = null;
-
-        System.out.println("produto: "+ produto.getCodprod() + produto.getNomeprod());
 
         if(new ProdutoDAO().editarProduto(produto)){
 

@@ -83,11 +83,6 @@ public class PedidoDAO {
 
             pt.executeQuery();
 
-            System.out.println(""+ pedido.getCodfor());
-            System.out.println(""+ pedido.getCodprod());
-            System.out.println(""+ pedido.getQtd());
-            System.out.println(""+ pedido.getCodpedido());
-
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -95,7 +90,6 @@ public class PedidoDAO {
     }
 
     public boolean deletarPedido(int codpedido){
-
 
         try(Connection con = new ConectaBD().getConexao()) {
 
@@ -134,7 +128,6 @@ public class PedidoDAO {
             e.printStackTrace();
         }
 
-        System.out.println("cadastrou: " + cadastrou);
         return cadastrou;
     }
 

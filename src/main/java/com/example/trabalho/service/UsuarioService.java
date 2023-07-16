@@ -18,8 +18,6 @@ public class UsuarioService {
 
         else if(login == false && cpf == false){
 
-            System.out.println("VERIFICOU LOGIN,CPF E SENHA");
-
             if(new UsuarioDAO().cadastrarUsuario(usuario)){
 
                 verifica = true;
@@ -28,15 +26,12 @@ public class UsuarioService {
                 verifica = false;
             }
         }
-        System.out.println("VERIFICA: " + verifica);
         return verifica;
     }
 
     public boolean autenticarLogin(Usuario usuario) {
 
         boolean login = new UsuarioDAO().verificaLogin(usuario.getLogin(), usuario.getSenha());
-
-
 
         if(login == true){
 

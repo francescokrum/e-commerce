@@ -73,12 +73,10 @@ public class FornecedorDAO {
 
             PreparedStatement pt = con.prepareStatement(sql);
 
-
             pt.setString(1, fornecedor.getNomefor());
             pt.setString(2, fornecedor.getCep());
             pt.setString(3, fornecedor.getCnpj());
             pt.setInt(4, fornecedor.getCodfor());
-
 
             pt.executeQuery();
 
@@ -88,8 +86,6 @@ public class FornecedorDAO {
         return true;
     }
     public boolean deletarFornecedor(int codfor){
-
-        System.out.println("CODFOR: "+ codfor);
 
         try(Connection con = new ConectaBD().getConexao()) {
 
@@ -135,7 +131,6 @@ public class FornecedorDAO {
             e.printStackTrace();
         }
 
-        System.out.println("tem: " + tem);
         return tem;
 
     }
@@ -160,8 +155,6 @@ public class FornecedorDAO {
         }catch(SQLException e){
             e.printStackTrace();
         }
-
-        System.out.println("CADASTROU: " + cadastrou);
 
         return cadastrou;
     }
