@@ -1,0 +1,46 @@
+#container {
+
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #245da8;
+    padding: 20px;
+    height: 100px;
+    width: 1600px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border: 1px solid black;
+}
+h1{
+    font-family: Calibri;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+label{
+    font-family: Calibri;
+}
+#campo{
+
+    margin-top: 5px;
+}
+#titulo{
+    margin-top: 130px;
+}
+.button{
+
+    margin-top: 5px;
+}
+#aviso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

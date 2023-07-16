@@ -1,0 +1,42 @@
+#container {
+
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opcao{
+
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+h1{
+    font-family: Calibri;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.button{
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #245da8;
+    padding: 20px;
+    height: 100px;
+    width: 1600px;
+    border: 1px solid black;
+}
