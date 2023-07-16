@@ -110,21 +110,25 @@ public class UsuarioDAO {
 
         return true;
     }
-    public boolean verificaCPF(String cpf){
+
+
+    public boolean verificaUsuario(String cpf, String login, String senha){
 
         Usuario u = new Usuario();
 
-        boolean jatem = false;
+        boolean tem = false;
 
         try(Connection con = new ConectaBD().getConexao()){
 
-            String sql = "SELECT * FROM usuario where cpf = ?; ";
+            String sql = "SELECT * FROM usuario WHERE cpf = ? OR login = ? OR senha = ?;";
 
             PreparedStatement pt = con.prepareStatement(sql);
             pt.setString(1, cpf);
+            pt.setString(2, login);
+            pt.setString(3, senha);
             ResultSet rs = pt.executeQuery();
 
-            while(rs.next()) {
+            while(rs.next()){
 
                 u.setCodusuario(rs.getInt("codusuario"));
                 u.setNome(rs.getString("nome"));
@@ -132,7 +136,8 @@ public class UsuarioDAO {
                 u.setLogin(rs.getString("login"));
                 u.setSenha(rs.getString("senha"));
                 u.setCargo(rs.getString("cargo"));
-                jatem = true;
+
+                tem = true;
 
             }
 
@@ -140,7 +145,7 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
 
-        return jatem;
+        return tem;
     }
 
     public boolean verificaLogin(String login, String senha){
