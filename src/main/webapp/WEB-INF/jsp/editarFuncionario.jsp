@@ -10,7 +10,7 @@
 <body>
 
 <header>
-<h1>Editar Funcionário</h1>
+    <h2>E-Commerce</h2>
 </header>
 
 <div id="titulo">

@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-    <h1>Cadastrar Funcionário</h1>
+    <h2>E-Commerce</h2>
 </header>
 
 <div id="titulo">
@@ -40,7 +40,7 @@
 
             <div id="campo">
             <form:label path="senha">Senha:</form:label>
-            <form:input type="text" path="senha"/><br>
+            <form:input type="password" path="senha"/><br>
             </div>
 
                 <div id="campo">
@@ -60,7 +60,7 @@
 
         <div class="button">
             <button type="submit" class="btn btn-primary" value="submit">Cadastrar</button>
-            <a href="/appmaven/usuario/principal" class="btn btn-primary">Voltar</a>
+            <a href="/appmaven/usuario/loginUsuario" class="btn btn-primary">Login</a>
         </div>
 
     </form:form>

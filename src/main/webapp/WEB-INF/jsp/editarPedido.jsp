@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-<h1>Editar Pedido</h1>
+    <h2>E-Commerce</h2>
 </header>
 
 <div id="titulo">

@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-<h1>Lista de pedidos</h1>
+<h1>LISTA DE PEDIDOS</h1>
 </header>
 
 <div id="container">
